@@ -2,14 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return "Olá, seja bem-vindo ao curso de Laravel!";
-});
+Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'principal']);
 
-Route::get('/sobre', function () {
-    return "Sobre nós!";
-});
+Route::get('/sobre', [\App\Http\Controllers\SobreController::class, 'sobre']);
 
-Route::get('/contato', function () {
-    return "Contato!";
-});
+Route::get('/contato', [\App\Http\Controllers\ContatoController::class, 'contato']);
