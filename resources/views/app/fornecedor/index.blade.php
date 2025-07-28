@@ -6,7 +6,7 @@
 @endphp
 
 @isset($fornecedores)
-    @foreach ($fornecedores as $key => $fornecedor )
+    @forelse ($fornecedores as $key => $fornecedor )
         Fornecedor: {{ $fornecedor['nome'] }}
         <br>
         Status: {{ $fornecedor['status'] }}
@@ -15,5 +15,7 @@
         <br>
         Telefone: {{ $fornecedor['ddd'] ?? 'Dado não informado' }} - {{ $fornecedor['telefone'] ?? 'Dado não informado' }}
         <br><br>
-    @endforeach
+    @empty
+        Não existem fornecedores cadastrados!    
+    @endforelse
 @endisset
