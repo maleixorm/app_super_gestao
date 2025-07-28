@@ -6,14 +6,14 @@
 @endphp
 
 @isset($fornecedores)
-    @for ($i = 0; isset($fornecedores[$i]); $i++)
-        Fornecedor: {{ $fornecedores[$i]['nome'] }}
+    @foreach ($fornecedores as $key => $fornecedor )
+        Fornecedor: {{ $fornecedor['nome'] }}
         <br>
-        Status: {{ $fornecedores[$i]['status'] }}
+        Status: {{ $fornecedor['status'] }}
         <br>
-        CNPJ: {{ $fornecedores[$i]['cnpj'] ?? 'Dado não informado' }}
+        CNPJ: {{ $fornecedor['cnpj'] ?? 'Dado não informado' }}
         <br>
-        Telefone: {{ $fornecedores[$i]['ddd'] ?? 'Dado não informado' }} - {{ $fornecedores[$i]['telefone'] ?? 'Dado não informado' }}
-        <hr>
-    @endfor 
+        Telefone: {{ $fornecedor['ddd'] ?? 'Dado não informado' }} - {{ $fornecedor['telefone'] ?? 'Dado não informado' }}
+        <br><br>
+    @endforeach
 @endisset
