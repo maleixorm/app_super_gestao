@@ -17,6 +17,17 @@ return new class extends Migration
             $table->sring('filial', 50);
             $table->timestamps();
         }); 
+        
+        // criando a tabela produto_filiais
+       Schema::create('produto_filiais', function(Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('filial_id');
+            $table->unsignedBigInteger('produto_id');
+            $table->decimal('preco_venda', 8, 2);
+            $table->integer('estoque_minimo');
+            $table->integer('estoque_maximo');
+            $table->timestamps();
+        }); 
     }
 
     /**
