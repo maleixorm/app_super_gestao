@@ -27,7 +27,12 @@ return new class extends Migration
             $table->integer('estoque_minimo');
             $table->integer('estoque_maximo');
             $table->timestamps();
-        }); 
+        });
+        
+        // removendo colunas da tabela produtos
+        Schema::table('produtos', function(Blueprint $table) {
+            $table->dropColumn('preco_venda', 'estoque_minimo', 'estoque_maximo');
+        });
     }
 
     /**
