@@ -14,7 +14,7 @@ return new class extends Migration
         // criando a tabela filiais
        Schema::create('filiais', function(Blueprint $table) {
             $table->id();
-            $table->sring('filial', 50);
+            $table->string('filial', 50);
             $table->timestamps();
         }); 
         
