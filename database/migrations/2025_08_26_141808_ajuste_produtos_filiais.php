@@ -50,5 +50,11 @@ return new class extends Migration
             $table->integer('estoque_minimo');
             $table->integer('estoque_maximo');
         });
+
+        // removendo a tabela produto_filiais
+        Schema::dropIfExists('produto_filiais');
+        
+        // removendo a tabela filiais
+        Schema::dropIfExists('filiais');
     }
 };
