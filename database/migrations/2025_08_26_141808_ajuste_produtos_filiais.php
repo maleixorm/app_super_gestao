@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         // criando a tabela filiais
-        
+       Schema::create('filiais', function(Blueprint $table) {
+            $table->id();
+            $table->sring('filial', 50);
+            $table->timestamps();
+        }); 
     }
 
     /**
